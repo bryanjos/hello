@@ -6,11 +6,12 @@ defmodule Hello.Mixfile do
      version: "0.0.1",
      elixir: "~> 1.0",
      elixirc_paths: elixirc_paths(Mix.env),
-     compilers: [:phoenix, :gettext] ++ Mix.compilers,
+     compilers: [:phoenix, :gettext, :elixir_script] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      aliases: aliases,
-     deps: deps]
+     deps: deps,
+     elixir_script: [ input: "web/static/exjs", output: "web/static/js"]]
   end
 
   # Configuration for the OTP application.
@@ -36,7 +37,8 @@ defmodule Hello.Mixfile do
      {:phoenix_html, "~> 2.4"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:elixir_script, "~> 0.19.0"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
