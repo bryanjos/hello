@@ -21,4 +21,4 @@ import "phoenix_html";
 // import socket from "./socket"
 import Hello from "./Elixir.Hello";
 
-Hello.hello();
+Hello.init();
