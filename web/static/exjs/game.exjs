@@ -1,0 +1,31 @@
+defmodule Game do
+  def init() do
+    JS.new Phaser.Game,
+           [800, 600, Phaser.CANVAS, "phaser", %{ "create" => &create/1 }]
+  end
+
+  def create(game) do
+    game.stage.setBackgroundColor(0xcdcdcd);
+
+    style = %{
+      "font" => "65px Arial Black",
+      "fill" => "#eeba30",
+      "align" => "center",
+      "stroke" => "#740001",
+      "strokeThickness" => 16
+    }
+
+    x = game.world.centerX
+
+    game.world.add(createText(game, x, 100, "Hello", style))
+    game.world.add(createText(game, x, 200, "From", style))
+    game.world.add(createText(game, x, 300, "Elixirscript", style))
+  end
+
+  def createText(game, x, y, text, style) do
+    text1 = JS.new Phaser.Text, [game, x, y, text, style]
+    text1.setShadow(2, 2, "#000000", 2, true, true)
+    text1.anchor.setTo(0.5)
+    text1
+  end
+end
