@@ -19,6 +19,8 @@ import "phoenix_html";
 // paths "./socket" or full ones "web/static/js/socket".
 
 // import socket from "./socket"
-import Hello from "./Elixir.Hello";
+// import Hello from "./Elixir.Hello";
+import Game from "./Elixir.Game";
 
-Hello.hello();
+// Hello.hello();
+Game.init();
