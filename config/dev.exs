@@ -11,7 +11,7 @@ config :hello, Hello.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
-  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin"]]
+  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin"], mix: ["elixirscript.watch"]]
 
 # Watch static and templates for browser reloading.
 config :hello, Hello.Endpoint,
@@ -20,12 +20,9 @@ config :hello, Hello.Endpoint,
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/gettext/.*(po)$},
       ~r{web/views/.*(ex)$},
-      ~r{web/templates/.*(eex)$},
-      ~r{web/static/.*(exjs)$}
+      ~r{web/templates/.*(eex)$}
     ]
-  ],
-  reloadable_paths: ["web"],
-  reloadable_compilers: [:gettext, :phoenix, :elixir, :elixir_script]
+  ]
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

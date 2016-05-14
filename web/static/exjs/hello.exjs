@@ -5,7 +5,7 @@ defmodule Hello do
 
 
   def create(game) do
-    text = "Hello!"
+    text = "Hello"
     style = %{ "font" => "65px Arial", "fill" => "#ff0044", "align" => "center" }
 
     game.add.text(game.world.centerX - 300, 0, text, style);
