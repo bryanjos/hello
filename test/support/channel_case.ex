@@ -32,9 +32,11 @@ defmodule Hello.ChannelCase do
   end
 
   setup tags do
-    unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(Hello.Repo, [])
-    end
+   :ok = Ecto.Adapters.SQL.Sandbox.checkout(MyApp.Repo)
+
+   unless tags[:async] do
+     Ecto.Adapters.SQL.Sandbox.mode(MyApp.Repo, {:shared, self()})
+   end  
 
     :ok
   end

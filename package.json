@@ -9,5 +9,9 @@
     "phoenix": "file:deps/phoenix",
     "phoenix_html": "file:deps/phoenix_html",
     "uglify-js-brunch": "~1.7.0"
+  },
+  "devDependencies": {
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015-without-strict-and-regenerator": "0.0.1"
   }
 }

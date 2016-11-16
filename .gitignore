@@ -23,4 +23,5 @@ erl_crash.dump
 # variables.
 /config/prod.secret.exs
 
-/web/static/js/Elixir*.js
+/web/static/js/app/Elixir*.js
+/web/static/js/elixir/Elixir*.js

@@ -11,7 +11,8 @@ config :hello, Hello.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
-  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin"], mix: ["elixirscript.watch"]]
+  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
+            cd: Path.expand("../", __DIR__)], mix: ["elixirscript.watch"]]
 
 # Watch static and templates for browser reloading.
 config :hello, Hello.Endpoint,

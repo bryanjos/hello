@@ -20,6 +20,6 @@ import "phoenix_html";
 
 // import socket from "./socket"
 // import Hello from "./Elixir.Hello";
-import Game from "./Elixir.Game";
+import Game from "./app/Elixir.Game";
 
 Game.init();
